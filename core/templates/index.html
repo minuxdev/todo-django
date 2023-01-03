@@ -1,0 +1,58 @@
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="container">
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <section class="userspace">
+        {% if user.is_authenticated %}
+          <h1>Hello <span class="username">{{user.username}}</span></h1>
+          <a href="{% url 'core:logout' %}">Logout</a>
+        {% else %}
+          <p>You need to login to view this page</p>
+          <a href="{% url 'core:login' %}">Login</a>
+        {% endif %}
+    </section>
+
+    <div class="user-actions">
+        <form class="search-form" action="{% url 'core:list' %}" method="get">
+            <input type="search" name="get-task" placeholder="Search for...">
+            <input type="submit" value="submit">
+        </form>
+        <a class='submit-btn' href="{% url 'core:add' %}">Add task</a>
+    </div>
+  
+  {% if tasks %}
+  <table class="task-container">
+    <tbody>
+      {% for task in tasks %}
+        <tr class="{{ task.status }} user-task">
+          <td>{{ forloop.counter }}</td>
+          <td>{{task.title}}</td> 
+          <td><a href="{% url 'core:details' id=task.id %}">info</a></td>
+          <td><a href="{% url 'core:update' id=task.id %}">edit</a></td>
+          <td><a href="{% url 'core:delete' id=task.id %}">del</a></td>
+          <td><a href="{% url 'core:complete' id=task.id %}">done</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  
+  <div>
+    <h4>No record found for this entry</h4>
+  </div>
+
+  {% endif %}
+
+
+</div>
