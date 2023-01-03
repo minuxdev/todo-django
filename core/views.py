@@ -13,7 +13,7 @@ from django.contrib.auth import login, logout, authenticate
 def index(request):
     if request.GET:
         task = request.GET['get-task']
-        tasks = Task.objects.filter(user = request.user, title = task)
+        tasks = Task.objects.filter(user = request.user, title__icontains = task)
     else:
         tasks = Task.objects.filter(user = request.user)
     return render(request, 'index.html', {'tasks': tasks})
