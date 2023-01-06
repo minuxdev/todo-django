@@ -2,6 +2,11 @@
   --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   font-size: 14px;
 }
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+}
 
 * {
   margin: 0;
@@ -21,6 +26,18 @@ body {
   background: #F9F9FB;
 }
 
+.container {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  display: grid;
+  grid-template-rows: max-content;
+  width: 100%;
+  margin: auto;
+  max-width: 35rem;
+  gap: 2rem;
+  padding: 1rem;
+}
+
 h1 {
   font-size: clamp(1.5rem, 14vh, 2rem);
   padding: 1rem 0rem;
@@ -30,6 +47,11 @@ h1 {
 .btn {
   padding: 0.6rem 1rem;
   border: none;
+  max-width: max-content;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .messages {
@@ -42,17 +64,6 @@ h1 {
   box-shadow: var(--box-shadow);
 }
 
-.container {
-  background: #fff;
-  box-shadow: var(--box-shadow);
-  display: grid;
-  grid-template-rows: max-content;
-  width: 100%;
-  margin: auto;
-  max-width: 35rem;
-  gap: 2rem;
-  padding: 1rem;
-}
 .container .userspace .username {
   display: block;
 }
@@ -61,6 +72,7 @@ h1 {
   gap: 1.5rem;
   justify-content: flex-end;
   align-items: center;
+  margin: 0.4rem 0 1rem 0;
 }
 
 .user-actions {
@@ -78,6 +90,7 @@ h1 {
   border: none;
   outline: none;
   padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 .user-actions .search-form input:nth-child(2) {
   margin-left: auto;
@@ -98,14 +111,35 @@ h1 {
   margin: 0.2rem 0;
   text-align: left;
   display: block;
+  padding: 0.8rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .task-container tr td {
-  padding: 0.3rem 0.5rem;
+  padding: 0 0.5rem;
   width: 10%;
   word-wrap: anywhere;
 }
 .task-container tr td:nth-child(2) {
-  width: 50%;
+  width: 60%;
+  margin-right: 0.4rem;
+  border-right: 2px solid lightgray;
+}
+
+.container {
+  gap: 1rem;
+}
+.container .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.container .details:nth-last-child(1) {
+  margin-bottom: 1rem;
+}
+.container .details .label-info {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
