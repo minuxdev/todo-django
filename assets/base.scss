@@ -1,0 +1,35 @@
+
+:root {
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  display: grid;
+  padding: 10% 1rem;
+  min-height: 100vh;
+  width: 100%;
+  grid-template-rows: max-content;
+
+  background: #F9F9FB;
+}
+
+ h1 {
+      font-size: clamp(1.5rem, 14vh, 2rem);
+      padding: 1rem 0rem;
+      border-bottom: 1px solid lightgray;
+    }
+.btn {
+  padding: .6rem 1rem;
+  border: none;
+}
+

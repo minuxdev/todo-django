@@ -1,151 +1,111 @@
 :root {
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  --bg-body: linear-gradient(to bottom right, rgba(0, 255, 255, 0.336), #a0d0fd52, #f0e3ed);
-  --box-shadow: 0 4px 15px #00000010;
 }
 
-@media (min-width: 768px) {
-  :root {
-    font-size: 16px;
-  }
-  body {
-    padding: 10%;
-  }
-}
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
 }
 
 body {
+  display: grid;
+  padding: 10% 1rem;
   min-height: 100vh;
-  padding: 5%;
-  background: var(--bg-body);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  grid-template-rows: max-content;
+  background: #F9F9FB;
 }
 
-.form {
-  max-width: 400px;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  background: #eee;
-  box-shadow: var(--box-shadow);
-  padding: 1rem;
+h1 {
+  font-size: clamp(1.5rem, 14vh, 2rem);
+  padding: 1rem 0rem;
+  border-bottom: 1px solid lightgray;
 }
-.form h1 {
-  margin-bottom: 1.2rem;
-}
-.form label {
-  width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  font-size: 1rem;
-}
-.form label input {
-  padding: 0.5rem;
-  width: 100%;
-  font-size: 1rem;
-}
-.form label textarea {
-  resize: none;
-}
-.form p {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.form .submit-btn {
-  width: 100%;
-  max-width: max-content;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+
+.btn {
+  padding: 0.6rem 1rem;
   border: none;
-  background-color: #1387d4;
-  cursor: pointer;
+}
+
+.messages {
+  position: fixed;
+  top: 0;
+  padding: 1rem;
+  max-width: 35rem;
+  width: 100%;
+  margin: auto;
+  box-shadow: var(--box-shadow);
 }
 
 .container {
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: #bcc0bf;
+  background: #fff;
   box-shadow: var(--box-shadow);
-}
-.container .userspace {
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid lightgray;
-  padding: 1rem 0;
+  display: grid;
+  grid-template-rows: max-content;
+  width: 100%;
+  margin: auto;
+  max-width: 35rem;
+  gap: 2rem;
+  padding: 1rem;
 }
 .container .userspace .username {
-  color: #fa3aaa;
-  text-transform: uppercase;
+  display: block;
 }
-.container .user-actions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin: 1rem 0;
-}
-.container .user-actions form {
+.container .user-options {
   display: flex;
-  max-width: 45%;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
 }
-.container .user-actions form input {
-  padding: 0.125rem;
-  border: none;
-  width: auto;
-}
-.container .user-actions .submit-btn {
+
+.user-actions {
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  gap: 1rem;
   width: 100%;
-  max-width: max-content;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  border: none;
-  background-color: #1387d4;
-  cursor: pointer;
-  place-self: end;
-  color: #fff;
 }
-.container .task-container {
+.user-actions .search-form {
+  display: inline-flex;
+  border: 1px solid lightgray;
+  padding: 0.2rem;
+}
+.user-actions .search-form input {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+.user-actions .search-form input:nth-child(2) {
+  margin-left: auto;
+  background: none;
+}
+.user-actions .submit-btn {
+  place-self: center end;
+  background-color: #a1a1d2;
+  margin-left: auto;
+}
+
+.task-container {
   table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
 }
-.container .task-container td {
-  width: 10%;
-  padding: 0.2rem 0.4rem;
-  word-wrap: break-word;
-}
-.container .task-container td:nth-child(2) {
-  width: 50%;
-}
-.container .task-container .user-task {
-  display: block;
-  padding: 0.5rem 0.5rem;
+.task-container tr {
   margin: 0.2rem 0;
-  width: 100%;
-  border-radius: 0.25rem;
-  background-color: #eee;
-  color: #333;
-  font-size: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  display: block;
 }
-.container .task-container .True {
-  text-decoration: line-through;
-  background-color: #888;
+.task-container tr td {
+  padding: 0.3rem 0.5rem;
+  width: 10%;
+  word-wrap: anywhere;
+}
+.task-container tr td:nth-child(2) {
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
