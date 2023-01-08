@@ -1,11 +1,9 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'forms.css' %}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'style.css' %}">
 
 
 
-<div class="container">
 <form class="form" action="" method="post">
     <h1>Login</h1>
     {% csrf_token %}
@@ -17,8 +15,8 @@
         Password
         <input type="password" name="password" id="password" placeholder="Password">
     </label>
-    <input class="btn submit-btn" type="submit" value="Login">
+    <input class="submit-btn" type="submit" value="Login">
     <p><span>Don't have accout?</span>  <a href="{% url 'core:signup' %}">Signup</a></p>
     
+
 </form>
-</div>

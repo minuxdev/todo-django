@@ -1,36 +1,8 @@
 
-{% load static %}
-<link rel="stylesheet" href="{% static 'style.css' %}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="container">
+<h1>Task: {{task.title}}</h1>
+<hr>
 
-<h1>{{task.title}}</h1>
-
-<div class="details">
-  <p class="label-info">Status</p>
-  <p>
-    {% if task.status %}
-    Completed
-    {% else %}
-    Active
-    {% endif %}
-  </p>
-</div>
-
-<div class="details">
-  <p class="label-info">Description</p>
-  <p>
-    {{task.description}}
-  </p>
-</div>
-
-<div class="details">
-  <p class="label-info">Created on</p>
-  <p>
-    {{task.created_on}}
-  </p>
-</div>
-
-<a class='btn back-btn' href="{% url 'core:list' %}">Back</a>
-</div>
+<p>Status: {{task.status}}</p>
+<p>Created at: {{task.creaed_on}}</p>
+<p>Description: {{task.description}}</p>
