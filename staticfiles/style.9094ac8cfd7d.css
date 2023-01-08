@@ -78,9 +78,6 @@ h1 {
   align-items: center;
   margin: 0.4rem 0 1rem 0;
 }
-.container .user-options a {
-  color: #1d509c;
-}
 
 .user-actions {
   display: grid;
@@ -105,9 +102,8 @@ h1 {
 }
 .user-actions .submit-btn {
   place-self: center end;
-  background-color: #1d509c;
+  background-color: #a1a1d2;
   margin-left: auto;
-  color: #fff;
 }
 
 .task-container {
@@ -121,19 +117,6 @@ h1 {
   display: block;
   padding: 0.8rem 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-.task-container tr.True {
-  transition: all ease 0.3s;
-  background: rgb(67, 216, 67);
-  position: relative;
-}
-.task-container tr.True::after {
-  content: "";
-  width: 100%;
-  height: 4%;
-  top: 48%;
-  background: rgb(216, 82, 82);
-  position: absolute;
 }
 .task-container tr td {
   padding: 0 0.5rem;
@@ -161,9 +144,4 @@ h1 {
   display: block;
   font-weight: 600;
   margin-top: 0.6rem;
-}
-
-.back-btn {
-  border: 1px solid #1d509c;
-  color: #1d509c;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.9094ac8cfd7d.css.map */

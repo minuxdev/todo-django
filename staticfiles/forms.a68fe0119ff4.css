@@ -22,7 +22,6 @@ body {
   padding: 10% 1rem;
   min-height: 100vh;
   width: 100%;
-  grid-template-rows: -webkit-max-content;
   grid-template-rows: max-content;
   background: #F9F9FB;
 }
@@ -31,7 +30,6 @@ body {
   background: #fff;
   box-shadow: var(--box-shadow);
   display: grid;
-  grid-template-rows: -webkit-max-content;
   grid-template-rows: max-content;
   width: 100%;
   margin: auto;
@@ -49,8 +47,6 @@ h1 {
 .btn {
   padding: 0.6rem 1rem;
   border: none;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
   font-size: 1rem;
   text-transform: uppercase;
@@ -115,4 +111,6 @@ h1 {
 }
 
 /*  LOGIN */
-/*  SIGNUP  *//*# sourceMappingURL=forms.css.map */
+/*  SIGNUP  */
+
+/*# sourceMappingURL=forms.css.61255857f869.map */
